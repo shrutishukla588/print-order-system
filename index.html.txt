@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PrintToHome</title>
+</head>
+<body>
+
+<h2>PrintToHome - Upload File</h2>
+
+<input type="text" id="name" placeholder="Your Name"><br><br>
+<input type="text" id="phone" placeholder="Phone Number"><br><br>
+
+<input type="file" id="file"><br><br>
+
+<button onclick="placeOrder()">Place Order</button>
+
+<p id="result"></p>
+
+<script>
+async function placeOrder() {
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+
+    const file = document.getElementById("file").files[0];
+
+    if(!name || !phone || !file){
+        alert("Fill all fields");
+        return;
+    }
+
+    document.getElementById("result").innerText =
+        "Order placed (demo). Backend next step.";
+}
+</script>
+
+</body>
+</html>
